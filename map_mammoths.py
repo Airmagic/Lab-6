@@ -1,7 +1,10 @@
+# folium is a pip install
 import folium
 from folium import plugins
+# This is to work with the data csv
 import csv
 
+# setting up a dictionary
 mammoth_colors = {'Mammuthus columbi' : 'green',
  'Mammuthus primigenius': 'blue',
  'Mammuthus hayi' : 'purple',
