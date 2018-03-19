@@ -1,95 +1,24 @@
-
+<!--         declaring that this is a html page -->
         <!DOCTYPE html>
         <head>
-            
-        
+<!--             calling the pages that are used for the page -->
             <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-        
-            
-        
             <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
-        
-        
-        
-            
-        
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        
-        
-        
-            
-        
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>        
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        
-        
-        
-            
-        
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js"></script>
-        
-        
-        
-            
-        
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster-src.js"></script>
-        
-        
-        
-            
-        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster-src.js"></script>        
             <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
-        
-        
-        
-            
-        
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
-        
-        
-        
-            
-        
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-        
-        
-        
-            
-        
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />        
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
-        
-        
-        
-            
-        
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
-        
-        
-        
-            
-        
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
-        
-        
-        
-            
-        
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" />
-        
-        
-        
-            
-        
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
-        
-        
-        
-            
-        
             <link rel="stylesheet" href="https://raw.githubusercontent.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css" />
-        
-        
-        
             
+<!--             making the style of the page -->
             <style>
 
             html, body {
@@ -109,8 +38,9 @@
             </style>
             
         
-            
-            <style> #map_86156446f10a451e97712b94d9dbc007 {
+<!--             style for the map -->
+            <style> 
+                #map_86156446f10a451e97712b94d9dbc007 {
                 position : relative;
                 width : 100.0%;
                 height: 100.0%;
@@ -118,28 +48,21 @@
                 top: 0.0%;
                 }
             </style>
-        
-        
-        
         </head>
-        <body>
-            
-        
-            
-            <div class="folium-map" id="map_86156446f10a451e97712b94d9dbc007" ></div>
-        
-        
-        
-        </body>
-        <script>
-            
-        
-            
 
+<!--         the main body ogf the page -->
+        <body>
+            <div class="folium-map" id="map_86156446f10a451e97712b94d9dbc007" ></div>
+        </body>
+
+<!--         The scrpit that runs with the page -->
+        <script>
+//             location to focus on the map
             var southWest = L.latLng(-90, -180);
             var northEast = L.latLng(90, 180);
             var bounds = L.latLngBounds(southWest, northEast);
-
+                
+//                 The boundary for the map when loaded
             var map_86156446f10a451e97712b94d9dbc007 = L.map('map_86156446f10a451e97712b94d9dbc007', {
                                            center:[40,-120],
                                            zoom: 3,
@@ -148,9 +71,7 @@
                                            crs: L.CRS.EPSG3857
                                          });
             
-        
-        
-            
+                
             var tile_layer_e436f7084d4141eb9cc3c99eb736e5f5 = L.tileLayer(
                 'https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg',
                 {
@@ -161,10 +82,6 @@
                     }
                 ).addTo(map_86156446f10a451e97712b94d9dbc007);
 
-        
-        
-            
-
             var marker_4b0ebd9277d34c05a56e1e1d7df267c7 = L.marker(
                 [18.616667,-97.900002],
                 {
@@ -172,10 +89,8 @@
                     }
                 )
                 .addTo(map_86156446f10a451e97712b94d9dbc007);
-            
-        
-            
-
+                
+//                 marker on the map
                 var icon_42ab22fd481147f19c893aaebe4bc439 = L.AwesomeMarkers.icon({
                     icon: 'info-sign',
                     iconColor: 'white',
@@ -184,9 +99,7 @@
                     extraClasses: 'fa-rotate-0'
                     });
                 marker_4b0ebd9277d34c05a56e1e1d7df267c7.setIcon(icon_42ab22fd481147f19c893aaebe4bc439);
-            
-        
-            
+                
             var popup_a143f769fbbd4d959d7aba4204ab0fbb = L.popup({maxWidth: '300'});
 
             
@@ -195,12 +108,7 @@
             
 
             marker_4b0ebd9277d34c05a56e1e1d7df267c7.bindPopup(popup_a143f769fbbd4d959d7aba4204ab0fbb);
-
-            
-        
-        
-            
-
+                
             var marker_33ba9be0b9044418ba2735d4a444a139 = L.marker(
                 [43.0,-118.0],
                 {
@@ -208,10 +116,7 @@
                     }
                 )
                 .addTo(map_86156446f10a451e97712b94d9dbc007);
-            
-        
-            
-
+                
                 var icon_ac45cb4098724bc59238278f53a192d2 = L.AwesomeMarkers.icon({
                     icon: 'info-sign',
                     iconColor: 'white',
@@ -220,8 +125,6 @@
                     extraClasses: 'fa-rotate-0'
                     });
                 marker_33ba9be0b9044418ba2735d4a444a139.setIcon(icon_ac45cb4098724bc59238278f53a192d2);
-            
-        
             
             var popup_7c65966414774fdfb3c623c518c71b76 = L.popup({maxWidth: '300'});
 
@@ -232,11 +135,6 @@
 
             marker_33ba9be0b9044418ba2735d4a444a139.bindPopup(popup_7c65966414774fdfb3c623c518c71b76);
 
-            
-        
-        
-            
-
             var marker_3ffa18d876ed43a79ef5795dfbfa7505 = L.marker(
                 [37.047699,-100.495201],
                 {
@@ -244,9 +142,6 @@
                     }
                 )
                 .addTo(map_86156446f10a451e97712b94d9dbc007);
-            
-        
-            
 
                 var icon_81e5f223758d44f58bb89e3f74fc6f3e = L.AwesomeMarkers.icon({
                     icon: 'info-sign',
@@ -257,8 +152,6 @@
                     });
                 marker_3ffa18d876ed43a79ef5795dfbfa7505.setIcon(icon_81e5f223758d44f58bb89e3f74fc6f3e);
             
-        
-            
             var popup_a01b27c45e4e44f594ecd91b3e1bc8f9 = L.popup({maxWidth: '300'});
 
             
@@ -268,11 +161,6 @@
 
             marker_3ffa18d876ed43a79ef5795dfbfa7505.bindPopup(popup_a01b27c45e4e44f594ecd91b3e1bc8f9);
 
-            
-        
-        
-            
-
             var marker_e6806c9a99bc4f558a7de77344130882 = L.marker(
                 [40.200001,-98.099998],
                 {
@@ -280,9 +168,6 @@
                     }
                 )
                 .addTo(map_86156446f10a451e97712b94d9dbc007);
-            
-        
-            
 
                 var icon_53267b4b1f364febbdc4be8af64d7026 = L.AwesomeMarkers.icon({
                     icon: 'info-sign',
@@ -293,8 +178,6 @@
                     });
                 marker_e6806c9a99bc4f558a7de77344130882.setIcon(icon_53267b4b1f364febbdc4be8af64d7026);
             
-        
-            
             var popup_bcd6e0909caa49eebb7311f779572bbe = L.popup({maxWidth: '300'});
 
             
@@ -304,11 +187,6 @@
 
             marker_e6806c9a99bc4f558a7de77344130882.bindPopup(popup_bcd6e0909caa49eebb7311f779572bbe);
 
-            
-        
-        
-            
-
             var marker_9197bd19e85f456086861ad6f45c9611 = L.marker(
                 [37.099998,-100.900002],
                 {
@@ -316,10 +194,7 @@
                     }
                 )
                 .addTo(map_86156446f10a451e97712b94d9dbc007);
-            
-        
-            
-
+           
                 var icon_19ea92e32e3945a998931453defa7e23 = L.AwesomeMarkers.icon({
                     icon: 'info-sign',
                     iconColor: 'white',
@@ -328,9 +203,7 @@
                     extraClasses: 'fa-rotate-0'
                     });
                 marker_9197bd19e85f456086861ad6f45c9611.setIcon(icon_19ea92e32e3945a998931453defa7e23);
-            
-        
-            
+           
             var popup_3c08671d804c4e79a62b1fbbe4c7ccee = L.popup({maxWidth: '300'});
 
             
@@ -340,11 +213,6 @@
 
             marker_9197bd19e85f456086861ad6f45c9611.bindPopup(popup_3c08671d804c4e79a62b1fbbe4c7ccee);
 
-            
-        
-        
-            
-
             var marker_9b0eb8fa54ee403dba9b01d2852ebd73 = L.marker(
                 [36.799999,-100.5],
                 {
@@ -352,9 +220,6 @@
                     }
                 )
                 .addTo(map_86156446f10a451e97712b94d9dbc007);
-            
-        
-            
 
                 var icon_97c8c1a214cb40e4be277187e5b4f4fe = L.AwesomeMarkers.icon({
                     icon: 'info-sign',
@@ -365,8 +230,6 @@
                     });
                 marker_9b0eb8fa54ee403dba9b01d2852ebd73.setIcon(icon_97c8c1a214cb40e4be277187e5b4f4fe);
             
-        
-            
             var popup_a8b2b282cc944054985670dfe933aaca = L.popup({maxWidth: '300'});
 
             
@@ -376,11 +239,6 @@
 
             marker_9b0eb8fa54ee403dba9b01d2852ebd73.bindPopup(popup_a8b2b282cc944054985670dfe933aaca);
 
-            
-        
-        
-            
-
             var marker_773006d4f10b4306a3149e4e5e7fb7f3 = L.marker(
                 [43.799999,-99.199997],
                 {
@@ -388,9 +246,6 @@
                     }
                 )
                 .addTo(map_86156446f10a451e97712b94d9dbc007);
-            
-        
-            
 
                 var icon_0db934602ce341529c99f4e97ba8e8c7 = L.AwesomeMarkers.icon({
                     icon: 'info-sign',
@@ -401,8 +256,6 @@
                     });
                 marker_773006d4f10b4306a3149e4e5e7fb7f3.setIcon(icon_0db934602ce341529c99f4e97ba8e8c7);
             
-        
-            
             var popup_f03ae613d18a426b8080e84bbe00c29e = L.popup({maxWidth: '300'});
 
             
@@ -412,11 +265,6 @@
 
             marker_773006d4f10b4306a3149e4e5e7fb7f3.bindPopup(popup_f03ae613d18a426b8080e84bbe00c29e);
 
-            
-        
-        
-            
-
             var marker_bd8b7c624f534cc4988d442f8bdea0ee = L.marker(
                 [32.900002,-117.099998],
                 {
@@ -424,9 +272,6 @@
                     }
                 )
                 .addTo(map_86156446f10a451e97712b94d9dbc007);
-            
-        
-            
 
                 var icon_f622ad73729d49a8882acfd37369f574 = L.AwesomeMarkers.icon({
                     icon: 'info-sign',
@@ -436,9 +281,7 @@
                     extraClasses: 'fa-rotate-0'
                     });
                 marker_bd8b7c624f534cc4988d442f8bdea0ee.setIcon(icon_f622ad73729d49a8882acfd37369f574);
-            
-        
-            
+           
             var popup_489d1be496834c91a0b8805dd5f07d2c = L.popup({maxWidth: '300'});
 
             
@@ -448,11 +291,6 @@
 
             marker_bd8b7c624f534cc4988d442f8bdea0ee.bindPopup(popup_489d1be496834c91a0b8805dd5f07d2c);
 
-            
-        
-        
-            
-
             var marker_c9a5feb2ac544a4f95c711469051e32f = L.marker(
                 [35.0,-101.900002],
                 {
@@ -461,9 +299,6 @@
                 )
                 .addTo(map_86156446f10a451e97712b94d9dbc007);
             
-        
-            
-
                 var icon_c9048ef148bb4dffb701526f00efeb4b = L.AwesomeMarkers.icon({
                     icon: 'info-sign',
                     iconColor: 'white',
@@ -472,22 +307,14 @@
                     extraClasses: 'fa-rotate-0'
                     });
                 marker_c9a5feb2ac544a4f95c711469051e32f.setIcon(icon_c9048ef148bb4dffb701526f00efeb4b);
-            
-        
-            
+          
             var popup_b427cf8a443a4ddd9836967bbbacbb75 = L.popup({maxWidth: '300'});
 
             
                 var html_8ed7a76b09f44154a51a7a917164c82f = $('         <div id="html_8ed7a76b09f44154a51a7a917164c82f"                 style="width: 100.0%; height: 100.0%;">                 Mammuthus columbi found in Randall, Texas. Newton Harrell/Bill Howse Ranch, 8 km S and 18 km E of Canyon.</div>                 ')[0];
                 popup_b427cf8a443a4ddd9836967bbbacbb75.setContent(html_8ed7a76b09f44154a51a7a917164c82f);
             
-
             marker_c9a5feb2ac544a4f95c711469051e32f.bindPopup(popup_b427cf8a443a4ddd9836967bbbacbb75);
-
-            
-        
-        
-            
 
             var marker_5a66443e5077451aa7fdfd06953ac969 = L.marker(
                 [33.900002,-117.0],
@@ -496,10 +323,7 @@
                     }
                 )
                 .addTo(map_86156446f10a451e97712b94d9dbc007);
-            
-        
-            
-
+  
                 var icon_143b0ecc7cf54e62b039d85f616532bf = L.AwesomeMarkers.icon({
                     icon: 'info-sign',
                     iconColor: 'white',
@@ -508,22 +332,13 @@
                     extraClasses: 'fa-rotate-0'
                     });
                 marker_5a66443e5077451aa7fdfd06953ac969.setIcon(icon_143b0ecc7cf54e62b039d85f616532bf);
-            
-        
-            
+           
             var popup_28e81823debd458cbefed726bdee8b5f = L.popup({maxWidth: '300'});
 
-            
                 var html_e71e1a36b2234f0692e77d1125774d80 = $('         <div id="html_e71e1a36b2234f0692e77d1125774d80"                 style="width: 100.0%; height: 100.0%;">                 Mammuthus found in Riverside, California. .</div>                 ')[0];
                 popup_28e81823debd458cbefed726bdee8b5f.setContent(html_e71e1a36b2234f0692e77d1125774d80);
             
-
             marker_5a66443e5077451aa7fdfd06953ac969.bindPopup(popup_28e81823debd458cbefed726bdee8b5f);
-
-            
-        
-        
-            
 
             var marker_72ddf6a652d54fdb8711b3fa6b905479 = L.marker(
                 [33.900002,-117.0],
@@ -532,10 +347,7 @@
                     }
                 )
                 .addTo(map_86156446f10a451e97712b94d9dbc007);
-            
-        
-            
-
+    
                 var icon_bf6c4daa48e24d2288b584b7f03caa61 = L.AwesomeMarkers.icon({
                     icon: 'info-sign',
                     iconColor: 'white',
@@ -544,8 +356,6 @@
                     extraClasses: 'fa-rotate-0'
                     });
                 marker_72ddf6a652d54fdb8711b3fa6b905479.setIcon(icon_bf6c4daa48e24d2288b584b7f03caa61);
-            
-        
             
             var popup_a51cc3996f4b4492b6324ec23760b93e = L.popup({maxWidth: '300'});
 
@@ -556,11 +366,6 @@
 
             marker_72ddf6a652d54fdb8711b3fa6b905479.bindPopup(popup_a51cc3996f4b4492b6324ec23760b93e);
 
-            
-        
-        
-            
-
             var marker_f71b90227d754ffc8ed9b9594dd4a4c3 = L.marker(
                 [33.900002,-117.0],
                 {
@@ -568,10 +373,7 @@
                     }
                 )
                 .addTo(map_86156446f10a451e97712b94d9dbc007);
-            
         
-            
-
                 var icon_4494785a1a3044089a9a36936d538d47 = L.AwesomeMarkers.icon({
                     icon: 'info-sign',
                     iconColor: 'white',
@@ -580,9 +382,7 @@
                     extraClasses: 'fa-rotate-0'
                     });
                 marker_f71b90227d754ffc8ed9b9594dd4a4c3.setIcon(icon_4494785a1a3044089a9a36936d538d47);
-            
         
-            
             var popup_da491b42f100410eb4b5096138099dc0 = L.popup({maxWidth: '300'});
 
             
@@ -592,11 +392,6 @@
 
             marker_f71b90227d754ffc8ed9b9594dd4a4c3.bindPopup(popup_da491b42f100410eb4b5096138099dc0);
 
-            
-        
-        
-            
-
             var marker_622d8becfab94e8c9f56692c26c68c97 = L.marker(
                 [33.900002,-117.0],
                 {
@@ -604,10 +399,7 @@
                     }
                 )
                 .addTo(map_86156446f10a451e97712b94d9dbc007);
-            
-        
-            
-
+ 
                 var icon_75147fb406194723b239b20902dfa6a1 = L.AwesomeMarkers.icon({
                     icon: 'info-sign',
                     iconColor: 'white',
@@ -616,9 +408,7 @@
                     extraClasses: 'fa-rotate-0'
                     });
                 marker_622d8becfab94e8c9f56692c26c68c97.setIcon(icon_75147fb406194723b239b20902dfa6a1);
-            
         
-            
             var popup_7cb92b113d8f4f6ba9ca8b39060e9003 = L.popup({maxWidth: '300'});
 
             
@@ -628,11 +418,6 @@
 
             marker_622d8becfab94e8c9f56692c26c68c97.bindPopup(popup_7cb92b113d8f4f6ba9ca8b39060e9003);
 
-            
-        
-        
-            
-
             var marker_d853e4fd8e474cbb978421a2722ef463 = L.marker(
                 [33.900002,-117.0],
                 {
@@ -641,9 +426,6 @@
                 )
                 .addTo(map_86156446f10a451e97712b94d9dbc007);
             
-        
-            
-
                 var icon_475866306f4a4c7b99969c247abc1134 = L.AwesomeMarkers.icon({
                     icon: 'info-sign',
                     iconColor: 'white',
@@ -653,8 +435,6 @@
                     });
                 marker_d853e4fd8e474cbb978421a2722ef463.setIcon(icon_475866306f4a4c7b99969c247abc1134);
             
-        
-            
             var popup_236f68a588194b828eb57c9fa6b837de = L.popup({maxWidth: '300'});
 
             
@@ -663,11 +443,6 @@
             
 
             marker_d853e4fd8e474cbb978421a2722ef463.bindPopup(popup_236f68a588194b828eb57c9fa6b837de);
-
-            
-        
-        
-            
 
             var marker_91d1efda27d24a84b583173da6b92971 = L.marker(
                 [33.900002,-117.0],
@@ -11896,9 +11671,5 @@
 
             marker_c0a27cd6c9154c26a9eb08b61175c150.bindPopup(popup_87db0263b4da4e1a94dd24bd6d36a901);
 
-            
-        
-        
-        
         </script>
         
